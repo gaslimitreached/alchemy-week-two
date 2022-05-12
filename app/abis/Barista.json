@@ -1,0 +1,1683 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "Barista__NotEnough",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Barista__WithdrawFailed",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "NewCoffee",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "buy",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAll",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Barista.Coffee[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTotalCoffee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "total",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": {
+    "object": "0x60a060405234801561001057600080fd5b50336080526080516107e56100366000396000818160ee015261014801526107e56000f3fe6080604052600436106100595760003560e01c80632ddbd13a146100655780633ccfd60b1461008e5780634839ee3f146100a557806353ed5143146100ba5780638da5cb5b146100dc578063c63e529b1461012857600080fd5b3661006057005b600080fd5b34801561007157600080fd5b5061007b60005481565b6040519081526020015b60405180910390f35b34801561009a57600080fd5b506100a361013b565b005b3480156100b157600080fd5b5060015461007b565b3480156100c657600080fd5b506100cf61019e565b6040516100859190610592565b3480156100e857600080fd5b506101107f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610085565b6100a36101363660046106dc565b610341565b6040516001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016904780156108fc02916000818181858888f1935050505061019c57604051632fb54dd760e11b815260040160405180910390fd5b565b60606001805480602002602001604051908101604052809291908181526020016000905b82821015610338576000848152602090819020604080516080810182526004860290920180546001600160a01b031683526001810154938301939093526002830180549293929184019161021590610740565b80601f016020809104026020016040519081016040528092919081815260200182805461024190610740565b801561028e5780601f106102635761010080835404028352916020019161028e565b820191906000526020600020905b81548152906001019060200180831161027157829003601f168201915b505050505081526020016003820180546102a790610740565b80601f01602080910402602001604051908101604052809291908181526020018280546102d390610740565b80156103205780601f106102f557610100808354040283529160200191610320565b820191906000526020600020905b81548152906001019060200180831161030357829003601f168201915b505050505081525050815260200190600101906101c2565b50505050905090565b3466038d7ea4c6800011156103695760405163d740e81760e01b815260040160405180910390fd5b6040805160808101825233815242602080830191825292820185815260608301859052600180548082018255600091909152835160049091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6810180546001600160a01b03939093166001600160a01b031990931692909217825592517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf78401559051805193949193610444937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf8019291909101906104ac565b50606082015180516104609160038401916020909101906104ac565b505050336001600160a01b03167f5d202edb9ac9aca913189e3c829f7fdbba23859e91379c70ecf7874fe39632a74284846040516104a09392919061077a565b60405180910390a25050565b8280546104b890610740565b90600052602060002090601f0160209004810192826104da5760008555610520565b82601f106104f357805160ff1916838001178555610520565b82800160010185558215610520579182015b82811115610520578251825591602001919060010190610505565b5061052c929150610530565b5090565b5b8082111561052c5760008155600101610531565b6000815180845260005b8181101561056b5760208185018101518683018201520161054f565b8181111561057d576000602083870101525b50601f01601f19169290920160200192915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b8381101561062b57888303603f19018552815180516001600160a01b031684528781015188850152868101516080888601819052906105fa82870182610545565b915050606080830151925085820381870152506106178183610545565b9689019694505050908601906001016105b9565b509098975050505050505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261066057600080fd5b813567ffffffffffffffff8082111561067b5761067b610639565b604051601f8301601f19908116603f011681019082821181831017156106a3576106a3610639565b816040528381528660208588010111156106bc57600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080604083850312156106ef57600080fd5b823567ffffffffffffffff8082111561070757600080fd5b6107138683870161064f565b9350602085013591508082111561072957600080fd5b506107368582860161064f565b9150509250929050565b600181811c9082168061075457607f821691505b60208210810361077457634e487b7160e01b600052602260045260246000fd5b50919050565b8381526060602082015260006107936060830185610545565b82810360408401526107a58185610545565b969550505050505056fea26469706673582212209fb42ad5617a19faf943ec9b1ab536edf9a8cf650b593ba5bb6bcce429772fe364736f6c634300080d0033",
+    "sourceMap": "64:1412:5:-:0;;;512:58;;;;;;;;;-1:-1:-1;552:10:5;536:27;;64:1412;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600436106100595760003560e01c80632ddbd13a146100655780633ccfd60b1461008e5780634839ee3f146100a557806353ed5143146100ba5780638da5cb5b146100dc578063c63e529b1461012857600080fd5b3661006057005b600080fd5b34801561007157600080fd5b5061007b60005481565b6040519081526020015b60405180910390f35b34801561009a57600080fd5b506100a361013b565b005b3480156100b157600080fd5b5060015461007b565b3480156100c657600080fd5b506100cf61019e565b6040516100859190610592565b3480156100e857600080fd5b506101107f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610085565b6100a36101363660046106dc565b610341565b6040516001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016904780156108fc02916000818181858888f1935050505061019c57604051632fb54dd760e11b815260040160405180910390fd5b565b60606001805480602002602001604051908101604052809291908181526020016000905b82821015610338576000848152602090819020604080516080810182526004860290920180546001600160a01b031683526001810154938301939093526002830180549293929184019161021590610740565b80601f016020809104026020016040519081016040528092919081815260200182805461024190610740565b801561028e5780601f106102635761010080835404028352916020019161028e565b820191906000526020600020905b81548152906001019060200180831161027157829003601f168201915b505050505081526020016003820180546102a790610740565b80601f01602080910402602001604051908101604052809291908181526020018280546102d390610740565b80156103205780601f106102f557610100808354040283529160200191610320565b820191906000526020600020905b81548152906001019060200180831161030357829003601f168201915b505050505081525050815260200190600101906101c2565b50505050905090565b3466038d7ea4c6800011156103695760405163d740e81760e01b815260040160405180910390fd5b6040805160808101825233815242602080830191825292820185815260608301859052600180548082018255600091909152835160049091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6810180546001600160a01b03939093166001600160a01b031990931692909217825592517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf78401559051805193949193610444937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf8019291909101906104ac565b50606082015180516104609160038401916020909101906104ac565b505050336001600160a01b03167f5d202edb9ac9aca913189e3c829f7fdbba23859e91379c70ecf7874fe39632a74284846040516104a09392919061077a565b60405180910390a25050565b8280546104b890610740565b90600052602060002090601f0160209004810192826104da5760008555610520565b82601f106104f357805160ff1916838001178555610520565b82800160010185558215610520579182015b82811115610520578251825591602001919060010190610505565b5061052c929150610530565b5090565b5b8082111561052c5760008155600101610531565b6000815180845260005b8181101561056b5760208185018101518683018201520161054f565b8181111561057d576000602083870101525b50601f01601f19169290920160200192915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b8381101561062b57888303603f19018552815180516001600160a01b031684528781015188850152868101516080888601819052906105fa82870182610545565b915050606080830151925085820381870152506106178183610545565b9689019694505050908601906001016105b9565b509098975050505050505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261066057600080fd5b813567ffffffffffffffff8082111561067b5761067b610639565b604051601f8301601f19908116603f011681019082821181831017156106a3576106a3610639565b816040528381528660208588010111156106bc57600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080604083850312156106ef57600080fd5b823567ffffffffffffffff8082111561070757600080fd5b6107138683870161064f565b9350602085013591508082111561072957600080fd5b506107368582860161064f565b9150509250929050565b600181811c9082168061075457607f821691505b60208210810361077457634e487b7160e01b600052602260045260246000fd5b50919050565b8381526060602082015260006107936060830185610545565b82810360408401526107a58185610545565b969550505050505056fea26469706673582212209fb42ad5617a19faf943ec9b1ab536edf9a8cf650b593ba5bb6bcce429772fe364736f6c634300080d0033",
+    "sourceMap": "64:1412:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;201:20;;;;;;;;;;;;;;;;;;;160:25:7;;;148:2;133:18;201:20:5;;;;;;;;1310:129;;;;;;;;;;;;;:::i;:::-;;717:94;;;;;;;;;;-1:-1:-1;790:7:5;:14;717:94;;576:87;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;157:38::-;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2199:32:7;;;2181:51;;2169:2;2154:18;157:38:5;2019:219:7;947:308:5;;;;;;:::i;:::-;;:::i;1310:129::-;1352:33;;-1:-1:-1;;;;;1352:5:5;:10;;1363:21;1352:33;;;;;;;;;1363:21;1352:10;:33;;;;;;;1347:85;;1407:25;;-1:-1:-1;;;1407:25:5;;;;;;;;;;;1347:85;1310:129::o;576:87::-;615:15;649:7;642:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;642:14:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;576:87;:::o;947:308::-;1068:9;1054:11;:23;1050:56;;;1086:20;;-1:-1:-1;;;1086:20:5;;;;;;;;;;;1050:56;1129:50;;;;;;;;1136:10;1129:50;;1148:15;1129:50;;;;;;;;;;;;;;;;;;;1116:7;:64;;;;;;;-1:-1:-1;1116:64:5;;;;;;;;;;;;;;;-1:-1:-1;;;;;1116:64:5;;;;-1:-1:-1;;;;;;1116:64:5;;;;;;;;;;;;;;;;;;;1129:50;;1116:64;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1116:64:5;;;;;;;;;;;;;;;;;;:::i;:::-;;;;1205:10;-1:-1:-1;;;;;1195:53:5;;1217:15;1234:4;1240:7;1195:53;;;;;;;;:::i;:::-;;;;;;;;947:308;;:::o;-1:-1:-1:-;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;196:472:7;238:3;276:5;270:12;303:6;298:3;291:19;328:1;338:162;352:6;349:1;346:13;338:162;;;414:4;470:13;;;466:22;;460:29;442:11;;;438:20;;431:59;367:12;338:162;;;518:6;515:1;512:13;509:87;;;584:1;577:4;568:6;563:3;559:16;555:27;548:38;509:87;-1:-1:-1;650:2:7;629:15;-1:-1:-1;;625:29:7;616:39;;;;657:4;612:50;;196:472;-1:-1:-1;;196:472:7:o;673:1341::-;865:4;894:2;934;923:9;919:18;964:2;953:9;946:21;987:6;1022;1016:13;1053:6;1045;1038:22;1079:2;1069:12;;1112:2;1101:9;1097:18;1090:25;;1174:2;1164:6;1161:1;1157:14;1146:9;1142:30;1138:39;1212:2;1204:6;1200:15;1233:1;1243:742;1257:6;1254:1;1251:13;1243:742;;;1322:22;;;-1:-1:-1;;1318:36:7;1306:49;;1378:13;;1450:9;;-1:-1:-1;;;;;1446:35:7;1431:51;;1525:11;;;1519:18;1502:15;;;1495:43;1577:11;;;1571:18;1414:4;1609:15;;;1602:27;;;1414:4;1656:48;1688:15;;;1571:18;1656:48;:::i;:::-;1642:62;;;1727:4;1780:2;1776;1772:11;1766:18;1744:40;;1833:6;1825;1821:19;1816:2;1808:6;1804:15;1797:44;;1864:41;1898:6;1882:14;1864:41;:::i;:::-;1963:12;;;;1854:51;-1:-1:-1;;;1928:15:7;;;;1279:1;1272:9;1243:742;;;-1:-1:-1;2002:6:7;;673:1341;-1:-1:-1;;;;;;;;673:1341:7:o;2243:127::-;2304:10;2299:3;2295:20;2292:1;2285:31;2335:4;2332:1;2325:15;2359:4;2356:1;2349:15;2375:719;2418:5;2471:3;2464:4;2456:6;2452:17;2448:27;2438:55;;2489:1;2486;2479:12;2438:55;2525:6;2512:20;2551:18;2588:2;2584;2581:10;2578:36;;;2594:18;;:::i;:::-;2669:2;2663:9;2637:2;2723:13;;-1:-1:-1;;2719:22:7;;;2743:2;2715:31;2711:40;2699:53;;;2767:18;;;2787:22;;;2764:46;2761:72;;;2813:18;;:::i;:::-;2853:10;2849:2;2842:22;2888:2;2880:6;2873:18;2934:3;2927:4;2922:2;2914:6;2910:15;2906:26;2903:35;2900:55;;;2951:1;2948;2941:12;2900:55;3015:2;3008:4;3000:6;2996:17;2989:4;2981:6;2977:17;2964:54;3062:1;3055:4;3050:2;3042:6;3038:15;3034:26;3027:37;3082:6;3073:15;;;;;;2375:719;;;;:::o;3099:543::-;3187:6;3195;3248:2;3236:9;3227:7;3223:23;3219:32;3216:52;;;3264:1;3261;3254:12;3216:52;3304:9;3291:23;3333:18;3374:2;3366:6;3363:14;3360:34;;;3390:1;3387;3380:12;3360:34;3413:50;3455:7;3446:6;3435:9;3431:22;3413:50;:::i;:::-;3403:60;;3516:2;3505:9;3501:18;3488:32;3472:48;;3545:2;3535:8;3532:16;3529:36;;;3561:1;3558;3551:12;3529:36;;3584:52;3628:7;3617:8;3606:9;3602:24;3584:52;:::i;:::-;3574:62;;;3099:543;;;;;:::o;3647:380::-;3726:1;3722:12;;;;3769;;;3790:61;;3844:4;3836:6;3832:17;3822:27;;3790:61;3897:2;3889:6;3886:14;3866:18;3863:38;3860:161;;3943:10;3938:3;3934:20;3931:1;3924:31;3978:4;3975:1;3968:15;4006:4;4003:1;3996:15;3860:161;;3647:380;;;:::o;4032:454::-;4257:6;4246:9;4239:25;4300:2;4295;4284:9;4280:18;4273:30;4220:4;4326:45;4367:2;4356:9;4352:18;4344:6;4326:45;:::i;:::-;4419:9;4411:6;4407:22;4402:2;4391:9;4387:18;4380:50;4447:33;4473:6;4465;4447:33;:::i;:::-;4439:41;4032:454;-1:-1:-1;;;;;;4032:454:7:o",
+    "linkReferences": {},
+    "immutableReferences": {
+      "20375": [
+        {
+          "start": 238,
+          "length": 32
+        },
+        {
+          "start": 328,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "ast": {
+    "absolutePath": "/Users/dev/art/alchemy-week-two/src/Coffee.sol",
+    "id": 20495,
+    "exportedSymbols": {
+      "Barista": [
+        20494
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:1438:5",
+    "nodes": [
+      {
+        "id": 20369,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:5",
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 20494,
+        "nodeType": "ContractDefinition",
+        "src": "64:1412:5",
+        "nodes": [
+          {
+            "id": 20371,
+            "nodeType": "ErrorDefinition",
+            "src": "87:27:5",
+            "errorSelector": "d740e817",
+            "name": "Barista__NotEnough",
+            "nameLocation": "93:18:5",
+            "parameters": {
+              "id": 20370,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "111:2:5"
+            }
+          },
+          {
+            "id": 20373,
+            "nodeType": "ErrorDefinition",
+            "src": "119:32:5",
+            "errorSelector": "5f6a9bae",
+            "name": "Barista__WithdrawFailed",
+            "nameLocation": "125:23:5",
+            "parameters": {
+              "id": 20372,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "148:2:5"
+            }
+          },
+          {
+            "id": 20375,
+            "nodeType": "VariableDeclaration",
+            "src": "157:38:5",
+            "constant": false,
+            "functionSelector": "8da5cb5b",
+            "mutability": "immutable",
+            "name": "owner",
+            "nameLocation": "190:5:5",
+            "scope": 20494,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 20374,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "157:15:5",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 20377,
+            "nodeType": "VariableDeclaration",
+            "src": "201:20:5",
+            "constant": false,
+            "functionSelector": "2ddbd13a",
+            "mutability": "mutable",
+            "name": "total",
+            "nameLocation": "216:5:5",
+            "scope": 20494,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 20376,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "201:7:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 20387,
+            "nodeType": "EventDefinition",
+            "src": "228:124:5",
+            "anonymous": false,
+            "eventSelector": "5d202edb9ac9aca913189e3c829f7fdbba23859e91379c70ecf7874fe39632a7",
+            "name": "NewCoffee",
+            "nameLocation": "234:9:5",
+            "parameters": {
+              "id": 20386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20379,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "269:4:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20387,
+                  "src": "253:20:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 20378,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20381,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "timestamp",
+                  "nameLocation": "291:9:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20387,
+                  "src": "283:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20380,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20383,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "317:4:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20387,
+                  "src": "310:11:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20382,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20385,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "message",
+                  "nameLocation": "338:7:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20387,
+                  "src": "331:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20384,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "243:108:5"
+            }
+          },
+          {
+            "id": 20396,
+            "nodeType": "StructDefinition",
+            "src": "358:116:5",
+            "canonicalName": "Barista.Coffee",
+            "members": [
+              {
+                "constant": false,
+                "id": 20389,
+                "mutability": "mutable",
+                "name": "from",
+                "nameLocation": "390:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 20396,
+                "src": "382:12:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 20388,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "382:7:5",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20391,
+                "mutability": "mutable",
+                "name": "timestamp",
+                "nameLocation": "413:9:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 20396,
+                "src": "405:17:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 20390,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "405:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20393,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "439:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 20396,
+                "src": "432:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20392,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "432:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20395,
+                "mutability": "mutable",
+                "name": "message",
+                "nameLocation": "460:7:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 20396,
+                "src": "453:14:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20394,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "453:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Coffee",
+            "nameLocation": "365:6:5",
+            "scope": 20494,
+            "visibility": "public"
+          },
+          {
+            "id": 20400,
+            "nodeType": "VariableDeclaration",
+            "src": "480:25:5",
+            "constant": false,
+            "mutability": "mutable",
+            "name": "coffees",
+            "nameLocation": "498:7:5",
+            "scope": 20494,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage",
+              "typeString": "struct Barista.Coffee[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 20398,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 20397,
+                  "name": "Coffee",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 20396,
+                  "src": "480:6:5"
+                },
+                "referencedDeclaration": 20396,
+                "src": "480:6:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Coffee_$20396_storage_ptr",
+                  "typeString": "struct Barista.Coffee"
+                }
+              },
+              "id": 20399,
+              "nodeType": "ArrayTypeName",
+              "src": "480:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage_ptr",
+                "typeString": "struct Barista.Coffee[]"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 20412,
+            "nodeType": "FunctionDefinition",
+            "src": "512:58:5",
+            "body": {
+              "id": 20411,
+              "nodeType": "Block",
+              "src": "526:44:5",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 20409,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 20403,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20375,
+                      "src": "536:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "expression": {
+                            "id": 20406,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -15,
+                            "src": "552:3:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 20407,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "552:10:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 20405,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "544:8:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_payable_$",
+                          "typeString": "type(address payable)"
+                        },
+                        "typeName": {
+                          "id": 20404,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "544:8:5",
+                          "stateMutability": "payable",
+                          "typeDescriptions": {}
+                        }
+                      },
+                      "id": 20408,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "544:19:5",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "536:27:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 20410,
+                  "nodeType": "ExpressionStatement",
+                  "src": "536:27:5"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 20401,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "523:2:5"
+            },
+            "returnParameters": {
+              "id": 20402,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "526:0:5"
+            },
+            "scope": 20494,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 20422,
+            "nodeType": "FunctionDefinition",
+            "src": "576:87:5",
+            "body": {
+              "id": 20421,
+              "nodeType": "Block",
+              "src": "632:31:5",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 20419,
+                    "name": "coffees",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 20400,
+                    "src": "649:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage",
+                      "typeString": "struct Barista.Coffee storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 20418,
+                  "id": 20420,
+                  "nodeType": "Return",
+                  "src": "642:14:5"
+                }
+              ]
+            },
+            "functionSelector": "53ed5143",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAll",
+            "nameLocation": "585:6:5",
+            "parameters": {
+              "id": 20413,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "591:2:5"
+            },
+            "returnParameters": {
+              "id": 20418,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20417,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20422,
+                  "src": "615:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct Barista.Coffee[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 20415,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 20414,
+                        "name": "Coffee",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 20396,
+                        "src": "615:6:5"
+                      },
+                      "referencedDeclaration": 20396,
+                      "src": "615:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Coffee_$20396_storage_ptr",
+                        "typeString": "struct Barista.Coffee"
+                      }
+                    },
+                    "id": 20416,
+                    "nodeType": "ArrayTypeName",
+                    "src": "615:8:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage_ptr",
+                      "typeString": "struct Barista.Coffee[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:17:5"
+            },
+            "scope": 20494,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 20432,
+            "nodeType": "FunctionDefinition",
+            "src": "717:94:5",
+            "body": {
+              "id": 20431,
+              "nodeType": "Block",
+              "src": "773:38:5",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 20428,
+                      "name": "coffees",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20400,
+                      "src": "790:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage",
+                        "typeString": "struct Barista.Coffee storage ref[] storage ref"
+                      }
+                    },
+                    "id": 20429,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "src": "790:14:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 20427,
+                  "id": 20430,
+                  "nodeType": "Return",
+                  "src": "783:21:5"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 20423,
+              "nodeType": "StructuredDocumentation",
+              "src": "669:43:5",
+              "text": "@dev Returns list of coffees purchased."
+            },
+            "functionSelector": "4839ee3f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTotalCoffee",
+            "nameLocation": "726:14:5",
+            "parameters": {
+              "id": 20424,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "740:2:5"
+            },
+            "returnParameters": {
+              "id": 20427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20426,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20432,
+                  "src": "764:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20425,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "764:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "763:9:5"
+            },
+            "scope": 20494,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 20471,
+            "nodeType": "FunctionDefinition",
+            "src": "947:308:5",
+            "body": {
+              "id": 20470,
+              "nodeType": "Block",
+              "src": "1040:215:5",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 20443,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "hexValue": "302e303031",
+                      "id": 20440,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1054:11:5",
+                      "subdenomination": "ether",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1000000000000000_by_1",
+                        "typeString": "int_const 1000000000000000"
+                      },
+                      "value": "0.001"
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "expression": {
+                        "id": 20441,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -15,
+                        "src": "1068:3:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 20442,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "value",
+                      "nodeType": "MemberAccess",
+                      "src": "1068:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1054:23:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 20447,
+                  "nodeType": "IfStatement",
+                  "src": "1050:56:5",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 20444,
+                        "name": "Barista__NotEnough",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20371,
+                        "src": "1086:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+                      "id": 20445,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1086:20:5",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 20446,
+                    "nodeType": "RevertStatement",
+                    "src": "1079:27:5"
+                  }
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 20452,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "1136:3:5",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 20453,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "1136:10:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "expression": {
+                              "id": 20454,
+                              "name": "block",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -4,
+                              "src": "1148:5:5",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_block",
+                                "typeString": "block"
+                              }
+                            },
+                            "id": 20455,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "timestamp",
+                            "nodeType": "MemberAccess",
+                            "src": "1148:15:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "id": 20456,
+                            "name": "name",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 20435,
+                            "src": "1165:4:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "id": 20457,
+                            "name": "message",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 20437,
+                            "src": "1171:7:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          ],
+                          "id": 20451,
+                          "name": "Coffee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20396,
+                          "src": "1129:6:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Coffee_$20396_storage_ptr_$",
+                            "typeString": "type(struct Barista.Coffee storage pointer)"
+                          }
+                        },
+                        "id": 20458,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1129:50:5",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Coffee_$20396_memory_ptr",
+                          "typeString": "struct Barista.Coffee memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Coffee_$20396_memory_ptr",
+                          "typeString": "struct Barista.Coffee memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 20448,
+                        "name": "coffees",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20400,
+                        "src": "1116:7:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage",
+                          "typeString": "struct Barista.Coffee storage ref[] storage ref"
+                        }
+                      },
+                      "id": 20450,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "src": "1116:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage_ptr_$_t_struct$_Coffee_$20396_storage_$returns$__$bound_to$_t_array$_t_struct$_Coffee_$20396_storage_$dyn_storage_ptr_$",
+                        "typeString": "function (struct Barista.Coffee storage ref[] storage pointer,struct Barista.Coffee storage ref)"
+                      }
+                    },
+                    "id": 20459,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1116:64:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 20460,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1116:64:5"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 20462,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1205:3:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 20463,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "1205:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 20464,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -4,
+                          "src": "1217:5:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 20465,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "src": "1217:15:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 20466,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20435,
+                        "src": "1234:4:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 20467,
+                        "name": "message",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20437,
+                        "src": "1240:7:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 20461,
+                      "name": "NewCoffee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20387,
+                      "src": "1195:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,uint256,string memory,string memory)"
+                      }
+                    },
+                    "id": 20468,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1195:53:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 20469,
+                  "nodeType": "EmitStatement",
+                  "src": "1190:58:5"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 20433,
+              "nodeType": "StructuredDocumentation",
+              "src": "817:125:5",
+              "text": "@dev Buy coffee for contract owner\n @param name Name of sender\n @param message Message included in purchase"
+            },
+            "functionSelector": "c63e529b",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buy",
+            "nameLocation": "956:3:5",
+            "parameters": {
+              "id": 20438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20435,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "983:4:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20471,
+                  "src": "969:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20434,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "969:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20437,
+                  "mutability": "mutable",
+                  "name": "message",
+                  "nameLocation": "1011:7:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20471,
+                  "src": "997:21:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20436,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "997:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "959:65:5"
+            },
+            "returnParameters": {
+              "id": 20439,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1040:0:5"
+            },
+            "scope": 20494,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 20489,
+            "nodeType": "FunctionDefinition",
+            "src": "1310:129:5",
+            "body": {
+              "id": 20488,
+              "nodeType": "Block",
+              "src": "1337:102:5",
+              "statements": [
+                {
+                  "condition": {
+                    "id": 20483,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1351:34:5",
+                    "subExpression": {
+                      "arguments": [
+                        {
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 20479,
+                                "name": "this",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -28,
+                                "src": "1371:4:5",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Barista_$20494",
+                                  "typeString": "contract Barista"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_Barista_$20494",
+                                  "typeString": "contract Barista"
+                                }
+                              ],
+                              "id": 20478,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1363:7:5",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": {
+                                "id": 20477,
+                                "name": "address",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "1363:7:5",
+                                "typeDescriptions": {}
+                              }
+                            },
+                            "id": 20480,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1363:13:5",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "id": 20481,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "balance",
+                          "nodeType": "MemberAccess",
+                          "src": "1363:21:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 20475,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20375,
+                          "src": "1352:5:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "id": 20476,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "send",
+                        "nodeType": "MemberAccess",
+                        "src": "1352:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_send_nonpayable$_t_uint256_$returns$_t_bool_$",
+                          "typeString": "function (uint256) returns (bool)"
+                        }
+                      },
+                      "id": 20482,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1352:33:5",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 20487,
+                  "nodeType": "IfStatement",
+                  "src": "1347:85:5",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 20484,
+                        "name": "Barista__WithdrawFailed",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20373,
+                        "src": "1407:23:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+                      "id": 20485,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1407:25:5",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 20486,
+                    "nodeType": "RevertStatement",
+                    "src": "1400:32:5"
+                  }
+                }
+              ]
+            },
+            "documentation": {
+              "id": 20472,
+              "nodeType": "StructuredDocumentation",
+              "src": "1261:44:5",
+              "text": "@dev Sends balance of contract to owner."
+            },
+            "functionSelector": "3ccfd60b",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "1319:8:5",
+            "parameters": {
+              "id": 20473,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1327:2:5"
+            },
+            "returnParameters": {
+              "id": 20474,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1337:0:5"
+            },
+            "scope": 20494,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 20493,
+            "nodeType": "FunctionDefinition",
+            "src": "1445:29:5",
+            "body": {
+              "id": 20492,
+              "nodeType": "Block",
+              "src": "1472:2:5",
+              "statements": []
+            },
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 20490,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1452:2:5"
+            },
+            "returnParameters": {
+              "id": 20491,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1472:0:5"
+            },
+            "scope": 20494,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Barista",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          20494
+        ],
+        "name": "Barista",
+        "nameLocation": "73:7:5",
+        "scope": 20495,
+        "usedErrors": [
+          20371,
+          20373
+        ]
+      }
+    ],
+    "license": "UNLICENSED"
+  }
+}
