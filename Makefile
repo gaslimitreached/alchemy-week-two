@@ -8,12 +8,11 @@ all: clean remove install update build
 clean  :; forge clean
 
 # Remove modules
-remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "chore: modules"
+remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add .
 
 # Install the Modules
 install :;
 	forge install --no-commit foundry-rs/forge-std
-	forge install --no-commit rari-capital/solmate
 	forge install --no-commit openzeppelin/openzeppelin-contracts
 
 # Update Dependencies
