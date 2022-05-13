@@ -2,7 +2,6 @@ import { Suspense, useEffect, useState, useTransition } from 'react';
 import { useAccount, useEnsName , useConnect, useDisconnect } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 
-
 export function Account() {
   const { connect, isConnected } = useConnect({
     connector: new InjectedConnector(),
@@ -13,14 +12,16 @@ export function Account() {
   const { data: name } = useEnsName({ address: data?.address });
 
   function renderDisplay() {
-    if (data && data.address)
-    name
-      ? setDisplay(`${name} (${data?.address})`)
-      : setDisplay(data?.address)
-      ; 
+    if (data && data.address) {
+      name
+        ? setDisplay(`${name} (${data?.address})`)
+        : setDisplay(data?.address)
+    }
   }
 
-  useEffect(() => { renderDisplay(); }, []);
+  useEffect(() => {
+    renderDisplay();
+  }, []);
 
   return (
     <div>
